@@ -1,0 +1,258 @@
+*{padding:0;margin:0;border:0;}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+button{background-color: transparent;}
+/*--------------------*/
+
+html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color:#000;
+    color: #fff;  
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1440px;
+}
+main {
+    flex: 1 1 auto;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 94vh;
+    background-position: center;
+    background-position: 0 -25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.background-blur {
+    filter: blur(7px);
+    position:absolute;
+    background-image: url('./assets/img/Beyonce.png');
+    height: 100vh;
+    width: auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:-1;
+    height: auto;
+}
+
+.player  {
+    margin: 150px auto 150px auto;
+    width: 400px;
+    height: 450px;
+    background: linear-gradient(to bottom right, rgb(0, 0, 255), 90%, rgb(67, 118, 219));
+    /* background-color: rgb(73, 73, 114); */
+    border-radius: 15px;
+    filter: none;
+    box-shadow: 0px 0px 15px   #000;
+}
+.picture {
+    background-image: url('./assets/img/Beyonce.png');
+    background-repeat: no-repeat;
+    width: auto;
+    height: 70%;
+    border-radius: 15px 15px 0 0;
+    background-position: 0 -15px;
+    /* background-position: center; */
+    background-size: 100%;
+}
+.control-top  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+.play{
+    background-image: url("./assets/svg/play_1.svg");
+    background-size: contain;
+    height: 60px;
+    width: 60px;
+    filter: invert(100%);
+    background-repeat: no-repeat;
+}
+.play.pause{
+    background-image: url("./assets/svg/pause_1.svg");
+}
+.song {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px 0 15px ;
+    width: 255px;
+}
+.auther{
+    color: #F88D07;
+    color: lightsalmon;
+    font-size: 28px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+.nameOfSong{
+    color: #fff;
+    font-weight: 400;
+    font-size: 20px;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+.switch{
+    width: 35px;
+    height: 35px;
+    background-size: contain;
+    filter: invert(100%);
+}
+.switch.pre{
+    background-image: url("./assets/svg/backward.svg");
+}
+.switch.next{
+    background-image: url("./assets/svg/forward_1.svg");
+
+}
+.control-down{
+    display: flex;
+    justify-content: center;
+}
+.progress_container{
+    width: 90%;
+    background:#6171c9;
+    border-radius: 5px;
+    height: 7px;
+    margin-top: 13px;
+    cursor: pointer;
+}
+.progress {
+    height: inherit;
+    width: 0%;
+    position: relative;
+    border-radius: inherit;
+    background: linear-gradient(90deg, lightsalmon, 50%, rgb(231, 112, 255));
+}
+.progress::before{
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: inherit;
+    right: -5px;
+    /* top: 50%; */
+    z-index: 2;
+    transform: translateY(-30%);
+    background: inherit;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+.progress_container:hover  .progress::before{
+    opacity: 1;
+    pointer-events: auto;
+}
+.progress_container .timer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+/* .timer{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-content: space-between;
+} */
+
+.footer {
+    height: 6vh;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer__row {
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__text {
+    letter-spacing: 3px;
+    font-size: 18px;
+    color: #fff;
+}
+.footer__text.link :visited {
+    color: #fff;
+}
+.footer__text.link:hover{
+    font-size: 20px;
+}
+#logo {
+    width: 90px;
+}
+#logo:hover{
+    width: 95px;
+}
+
+@media (max-width: 1180px){
+    .background-blur {
+        background-size: auto 94vh;
+        background-position: center;
+    }
+}
+
+@media (max-width: 485px){
+    .player{
+        width: 300px;
+        height: 315px;
+    }
+    .song{
+        width: 190px;
+        margin: 0 5px 0 15px;
+    }
+    .auther {
+        font-size: 20px;
+    }
+    .nameOfSong{
+        font-size: 16px;
+    }
+    .play{
+        width: 50px;
+        height: 50px;
+    }
+    .switch {
+        width: 25px;
+        height: 25px;
+    }
+    #logo{
+        width: 70px;
+    }
+    .footer__row{
+       height: auto;
+    }
+    .footer__text {
+        font-size: 15px;
+    }
+}
